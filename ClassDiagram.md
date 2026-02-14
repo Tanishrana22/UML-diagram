@@ -585,10 +585,52 @@ classDef yellow fill:#FFD54F,color:#000000,stroke:#000000,stroke-width:2px
 
 class User yellow
 class Order yellow
-```
 
 ```
+---
 
 
 
+## Voice Assitant Pyhton Project 
+
+```mermaid
+classDiagram
+
+class VoiceAssistant {
+    -engine
+    -recognizer
+    +speak(text: str)
+    +listen(): str
+    +processCommand(command: str)
+    +run()
+}
+
+class SpeechEngine {
+    +initialize()
+    +setVoice(voiceId: str)
+    +setRate(rate: int)
+    +speak(text: str)
+}
+
+class SpeechRecognizer {
+    +listen(): str
+    +adjustNoise()
+}
+
+class CommandProcessor {
+    +handleCommand(command: str)
+    +getCurrentTime(): str
+}
+
+class WebServiceHandler {
+    +openGoogle()
+    +openYouTube()
+    +openEmail()
+    +openWebsite(url: str)
+}
+
+VoiceAssistant --> SpeechEngine
+VoiceAssistant --> SpeechRecognizer
+VoiceAssistant --> CommandProcessor
+CommandProcessor --> WebServiceHandler
 ```
