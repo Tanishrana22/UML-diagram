@@ -232,7 +232,7 @@ ProjectCompleted --> [*]
 
 ---
 
-## State Diagram:
+## State Diagram Of ATM Machine :
 
 ```mermaid
 stateDiagram-v2
