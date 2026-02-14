@@ -244,3 +244,44 @@ This approach improves readability, maintainability, and collaboration in softwa
 
 ---
 
+## Subgraph
+```mermaid
+graph LR
+
+    subgraph one[Single]
+        A1[A1]
+    end 
+
+    subgraph multiple[Multiple]
+        subgraph Two[Double]
+            B1 --> B2
+        end
+
+        subgraph Three[Triple]
+            C1 --> C2
+            C1 --> C3
+        end
+    end
+
+    one -->multiple
+    Two-->Three
+    
+
+```
+**Code:**
+graph LR
+    subgraph one[Single]
+        A1[A1]
+    end 
+    subgraph multiple[Multiple]
+        subgraph Two[Double]
+            B1 --> B2
+        end
+        subgraph Three[Triple]
+            C1 --> C2
+            C1 --> C3
+        end
+    end
+    one -->multiple
+    Two-->Three
+    
