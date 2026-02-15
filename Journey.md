@@ -47,6 +47,23 @@ journey
       Check enrolled courses: 4: Student
       Logout from system: 5: Student
 ```
+**CODE:**
+journey
+    title Student Portal User Journey
+    section Account Access
+      Open student portal website: 5: Student
+      Click login button: 4: Student
+      Enter username and password: 3: Student
+      Login successful: 5: System
+    section Course Enrollment
+      View available courses: 4: Student
+      Select course: 5: Student
+      Confirm enrollment: 4: Student
+      Enrollment successful: 5: System
+    section Dashboard Access
+      View dashboard: 5: Student
+      Check enrolled courses: 4: Student
+      Logout from system: 5: Student
 
 This diagram shows the journey of a student using a student portal system.
 
