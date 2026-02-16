@@ -211,3 +211,95 @@ title Project Distribution
 
 ---
 
+## Quadrant Chart :
+* A quadrant chart is visual representation of data that is divided into four quadrants.
+* It is used to plot data points on a two-dimensional grid, with one variable represented on the x-axis and another variable represented on the Y -axis.
+* The quadrants are determined by divided the chart into four equal parts based on a set of criteria that is specific to the data being analyzed .
+* They are commonly used in **business**, **marketing** and **risk management** , amony other fields.
+---
+
+**Quadrant Chart Diagram:**
+```mermaid
+    quadrantChart
+    title Reach and engagement of campaigns
+    x-axis Low Reach --> High Reach
+    y-axis Low Engagement --> High Engagement
+    quadrant-1 We should expand 
+    quadrant-2 Need to promote 
+    quadrant-3 Re-evaluate 
+    quadrant-4 May ne improved 
+    
+    Campaign A:[0.3,0.6]
+    Campaign B:[0.45,0.23]
+    Campaign C:[0.57,0.69]
+    Campaign D:[0.78,0.34]
+    Campaign E:[0.40 , 0.34]
+    Campaign F:[0.35,0.78]
+```
+**CODE:**
+ quadrantChart
+    title Reach and engagement of campaigns
+    x-axis Low Reach --> High Reach
+    y-axis Low Engagement --> High Engagement
+    quadrant-1 We should expand 
+    quadrant-2 Need to promote 
+    quadrant-3 Re-evaluate 
+    quadrant-4 May ne improved 
+    Campaign A:[0.3,0.6]
+    Campaign B:[0.45,0.23]
+    Campaign C:[0.57,0.69]
+    Campaign D:[0.78,0.34]
+    Campaign E:[0.40 , 0.34]
+    Campaign F:[0.35,0.78]
+
+---
+
+```mermaid 
+%%{
+    init:{
+"theme":"default"
+"themeVariables":{
+    "quadrant1Fill":"red",
+    "quadrant2Fill":"green",
+    "quadrant3Fill":"#eeff00
+    "quadrant4Fill": "blue"
+    "quadrant2TextFill":"white"
+                 }
+    }
+  }%%
+quadrantChart
+    title Business Process Evaluation 
+    x-axis Inefficient --> Efficient 
+    y-axis Low Impact --> High Impact 
+
+    quadrant-1 Strategic Focus 
+    quadrant-2 Optimization Opportunities
+    quadrant-3 Evaluate Effectiveness 
+    quadrant-4 Imporvement Needed 
+    
+    Process A:[0.2 , 0.8]
+    Process B:[0.6 , 0.7]
+    Process C:[0.8 , 0.4]
+    Process D:[0.3 , 0.2]
+    Process E:[0.5 , 0.5]
+    Process F:[0.7 , 0.9]
+```
+**CODE:**
+quadrantChart
+    title Business Process Evaluation 
+    x-axis Inefficient --> Efficient 
+    y-axis Low Impact --> High Impact 
+    quadrant-1 Strategic Focus 
+    quadrant-2 Optimization Opportunities
+    quadrant-3 Evaluate Effectiveness 
+    quadrant-4 Imporvement Needed 
+    Process A:[0.2 , 0.8]
+    Process B:[0.6 , 0.7]
+    Process C:[0.8 , 0.4]
+    Process D:[0.3 , 0.2]
+    Process E:[0.5 , 0.5]
+    Process F:[0.7 , 0.9]
+    
+---
+
+
