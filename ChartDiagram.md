@@ -89,6 +89,7 @@ gantt
 
 ---
 
+## COMPONENT:
 **Title:**
 The title is an optional string to be displayed at the top of the Gantt chart to describe the chart as a whole.
 
