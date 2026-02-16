@@ -303,3 +303,325 @@ quadrantChart
 ---
 
 
+## Requirement Diagram :
+A Requirement diagram provides a visualization for requirements and their connections, to each other and other documented elements.
+
+**A Requirement Diagram is used to show:**
+
+* System requirements
+* Functional requirements
+* Non-functional requirements
+* Relationships between requirements
+* Dependencies and hierarchy
+
+ **Requirement Diagram Elements**:
+| Element     | Description                      |
+| ----------- | -------------------------------- |
+| Requirement | A condition or capability needed |
+| ID          | Unique identifier                |
+| Text        | Description of requirement       |
+| Derive      | Derived from another requirement |
+| Satisfy     | Implemented by component         |
+| Verify      | Tested by test case              |
+
+**Syntax:**
+
+requirementDiagram
+requirement Req1 {
+    id: 1
+    text: The system shall allow user login
+    risk: medium
+    verifymethod: test
+}
+
+---
+
+**Example:**
+```mermaid
+requirementDiagram
+    requirement req1 {
+        id: 1
+        text: User Text
+        verifymethod: Analysis
+    }
+    element elem1{
+        type: simulation
+        docref: github.com/all_the_test
+    }
+
+    req1 -satisfies->elem1
+```
+
+---
+
+## Web App Requirement Diagram:
+
+```mermaid
+requirementDiagram
+    requirement Web_APP {
+        id: 1
+        text: Sample Web application
+        verifymethod: Inspection
+    }
+
+    requirement Responsive {
+        id: 1.1
+        text: Application should support moblie and desktop screen
+        verifymethod: Test
+    }
+
+    requirement User_Auth {
+        id: 2
+        text: Enable user signup and login 
+        risk: High
+        verifymethod: Analysis
+    }
+
+    requirement DB_Access {
+        id: 3
+        text: Application requires access to a SQL database
+        risk: Low
+        verifymethod: Inspection
+    }
+    element Frontend {
+        type: SPA
+        docRef: specs/frontend.pdf
+
+    }
+    element Backend {
+        type: NodeJS REST API
+        docRef: specs/backend.pdf
+    }
+    element DB {
+        type: PostgreSQL 12
+        docRef: admin/db_schema.sql
+    }
+
+    Frontend - satisfies ->Responsive 
+    Backend - satisfies ->User_Auth
+    DB - satisfies ->DB_Access
+    Web_APP - contains -> Responsive
+    Web_APP - contains -> User_Auth
+    Web_APP - contains -> DB_Access
+
+```
+**CODE:**
+
+requirementDiagram
+
+    requirement Web_APP {
+        id: 1
+        text: Sample Web application
+        verifymethod: Inspection
+    }
+
+    requirement Responsive {
+        id: 1.1
+        text: Application should support moblie and desktop screen
+        verifymethod: Test
+    }
+
+    requirement User_Auth {
+        id: 2
+        text: Enable user signup and login 
+        risk: High
+        verifymethod: Analysis
+    }
+
+    requirement DB_Access {
+        id: 3
+        text: Application requires access to a SQL database
+        risk: Low
+        verifymethod: Inspection
+    }
+    element Frontend {
+        type: SPA
+        docRef: specs/frontend.pdf
+
+    }
+    element Backend {
+        type: NodeJS REST API
+        docRef: specs/backend.pdf
+    }
+    element DB {
+        type: PostgreSQL 12
+        docRef: admin/db_schema.sql
+    }
+
+    Frontend - satisfies ->Responsive 
+    Backend - satisfies ->User_Auth
+    DB - satisfies ->DB_Access
+    Web_APP - contains -> Responsive
+    Web_APP - contains -> User_Auth
+    Web_APP - contains -> DB_Access
+
+---
+
+## GitGraph Diagram:
+* A Git graph is a pictorial representation of git commits and git acitons (commands ) on various branches.
+* These kind of diagram are particularly helpful to developers and devops teams to share their Git branching strategies. For example , it makes it easier to visualize how git flow works. 
+* It improves Git workflow by allowing users to perform Git operations visually instead of using command-line commands.
+Purpose of Git Graph
+
+**The main purposes of Git Graph are:**
+
+* Visualize Git commit history
+* View branches and merges
+* Manage Git repositories easily
+* Perform Git operations using GUI
+* Improve understanding of project version history
+
+**Features of Git Graph**:
+
+ **Visual Commit History:**
+
+* Git Graph displays commits in a graphical tree structure showing:
+* Commit ID
+* Author
+* Date and time
+* Commit message
+
+ **Branch Visualization:**
+* Shows all branches including:
+* Main branch
+* Feature branches
+* Remote branches
+* Helps understand branch structure clearly.
+
+**Branch Management:**
+
+* You can perform operations like:
+* Create branch
+* Delete branch
+* Checkout branch
+* Merge branch
+
+**Commit Information:**
+
+* Shows detailed commit information:
+* Commit message
+* Files changed
+* Author name
+* Commit time
+
+ **Merge and Rebase Support**
+
+* Allows users to:
+* Merge branches visually
+* Rebase branches
+* Resolve conflicts easily
+
+**Remote Repository Support**
+* Supports remote repositories such as:
+* GitHub
+* GitLab
+* Bitbucket
+
+**You can:**
+
+Push changes
+Pull changes
+Fetch updates
+
+#  Git Graph Diagram :
+
+```mermaid
+gitGraph
+   commit id: "Initial Commit"
+
+   branch develop
+   checkout develop
+   commit id: "Setup project structure"
+
+   branch feature/login
+   checkout feature/login
+   commit id: "Create login UI"
+   commit id: "Add authentication logic"
+   commit id: "Fix login bugs"
+
+   checkout develop
+   merge feature/login
+   commit id: "Integrate login feature"
+
+   branch feature/dashboard
+   checkout feature/dashboard
+   commit id: "Create dashboard UI"
+   commit id: "Add dashboard functionality"
+
+   checkout develop
+   merge feature/dashboard
+   commit id: "Integrate dashboard feature"
+
+   branch release/v1.0
+   checkout release/v1.0
+   commit id: "Prepare release v1.0"
+   commit id: "Fix minor bugs"
+
+   checkout main
+   merge release/v1.0
+   commit id: "Release v1.0"
+
+   branch hotfix/security
+   checkout hotfix/security
+   commit id: "Fix security vulnerability"
+
+   checkout main
+   merge hotfix/security
+   commit id: "Hotfix applied"
+
+   checkout develop
+   merge hotfix/security
+   commit id: "Sync hotfix to develop"
+```
+**CODE:**
+
+
+gitGraph
+   commit id: "Initial Commit"
+
+   branch develop
+   checkout develop
+   commit id: "Setup project structure"
+
+   branch feature/login
+   checkout feature/login
+   commit id: "Create login UI"
+   commit id: "Add authentication logic"
+   commit id: "Fix login bugs"
+
+   checkout develop
+   merge feature/login
+   commit id: "Integrate login feature"
+
+   branch feature/dashboard
+   checkout feature/dashboard
+   commit id: "Create dashboard UI"
+   commit id: "Add dashboard functionality"
+
+   checkout develop
+   merge feature/dashboard
+   commit id: "Integrate dashboard feature"
+
+   branch release/v1.0
+   checkout release/v1.0
+   commit id: "Prepare release v1.0"
+   commit id: "Fix minor bugs"
+
+   checkout main
+   merge release/v1.0
+   commit id: "Release v1.0"
+
+   branch hotfix/security
+   checkout hotfix/security
+   commit id: "Fix security vulnerability"
+
+   checkout main
+   merge hotfix/security
+   commit id: "Hotfix applied"
+
+   checkout develop
+   merge hotfix/security
+   commit id: "Sync hotfix to develop"
+
+---
+
